@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Form Validation</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="left-section">
+        <div class="brand">
+            <i class="fa-solid fa-user-plus"></i>
+            Register
+        </div>
+
+        <div class="welcome">
+            <h1>Create your<br><span>Account.</span></h1>
+            <p>
+                Join us today and create your account in just
+                a few simple steps.
+            </p>
+
+            <div class="features">
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Secure Registration</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Easy & Fast</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Your data is protected</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="right-section">
+
+        <div class="form-card">
+
+            <div class="form-heading">
+                <h2>Sign Up</h2>
+                <p>Please enter your details below</p>
+            </div>
+
+            <form id="registrationForm" novalidate>
+
+                <!-- Name -->
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+
+                    <div class="input-box">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text"
+                               id="name"
+                               placeholder="Enter your full name">
+                    </div>
+
+                    <small id="nameError"></small>
+                </div>
+
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+
+                    <div class="input-box">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="text"
+                               id="email"
+                               placeholder="example@gmail.com">
+                    </div>
+
+                    <small id="emailError"></small>
+                </div>
+
+
+                <!-- Phone + PIN -->
+                <div class="two-columns">
+
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text"
+                                   id="phone"
+                                   placeholder="10 digits">
+                        </div>
+
+                        <small id="phoneError"></small>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="pin">PIN Code</label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="text"
+                                   id="pin"
+                                   placeholder="6 digits">
+                        </div>
+
+                        <small id="pinError"></small>
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password"
+                               id="password"
+                               placeholder="Minimum 8 characters">
+
+                        <i class="fa-regular fa-eye toggle"
+                           onclick="togglePassword('password', this)"
+                           aria-label="Toggle password visibility">
+                        </i>
+                    </div>
+
+                    <small id="passwordError"></small>
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input type="password"
+                               id="confirmPassword"
+                               placeholder="Re-enter your password">
+
+                        <i class="fa-regular fa-eye toggle"
+                           onclick="togglePassword('confirmPassword', this)"
+                           aria-label="Toggle confirm password visibility">
+                        </i>
+                    </div>
+
+                    <small id="confirmPasswordError"></small>
+                </div>
+
+
+                <!-- Gender -->
+                <div class="input-group">
+                    <label for="gender">Gender</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-venus-mars"></i>
+
+                        <select id="gender">
+                            <option value="">Select your gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <small id="genderError"></small>
+                </div>
+
+
+                <div class="terms">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">
+                        I agree to the Terms & Conditions
+                    </label>
+                </div>
+
+                <small id="termsError"></small>
+
+
+                <button type="submit" id="submitBtn">
+                    Create Account
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+
+                <div id="successMessage"></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
